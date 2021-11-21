@@ -25,7 +25,10 @@ public class PlayerController : MonoBehaviour
     {
         string tag = collision.gameObject.tag;
         if (tag == "Ball")
-            m_AudioSource.Play();   
+        {
+            m_AudioSource.Play();
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up);
+        }
 
         if (tag == "Effect")
         {
