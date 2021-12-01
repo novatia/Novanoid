@@ -685,7 +685,7 @@ GameObject:
   - component: {fileID: 120594593}
   m_Layer: 13
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2709,7 +2709,7 @@ GameObject:
   - component: {fileID: 537132948}
   m_Layer: 13
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4960,7 +4960,7 @@ GameObject:
   - component: {fileID: 887182563}
   m_Layer: 13
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: Ceil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10162,6 +10162,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2522560937426839865, guid: 730118a7690a6664f84bb5f3f4b998fa,
+        type: 3}
+      propertyPath: Speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5756091701470955301, guid: 730118a7690a6664f84bb5f3f4b998fa,
         type: 3}
       propertyPath: m_Name
@@ -10233,8 +10238,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 237460398455379432, guid: ee7b06a0539e9a74881302052b3d48dd,
         type: 3}
-      propertyPath: Speed
-      value: 2.5
+      propertyPath: BorderForce
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 805480096303380855, guid: ee7b06a0539e9a74881302052b3d48dd,
         type: 3}

@@ -62,7 +62,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -85,7 +85,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPosition: {x: -1, y: 1, z: 0}
   Direction: {x: 1, y: -1, z: 0}
-  Speed: 1.1
+  Speed: 2
+  BorderForce: 2
 --- !u!212 &6170079832611039337
 SpriteRenderer:
   m_ObjectHideFlags: 0

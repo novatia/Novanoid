@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0a2a326e7ab7e438d227872ea59434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 4
   StartPosition: {x: 0, y: 0, z: 0}
   LeftBound: {x: -3.3, y: 0, z: 0}
   RightBound: {x: 3.3, y: 0, z: 0}

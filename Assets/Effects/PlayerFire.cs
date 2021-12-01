@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerFire : IEffect
+public class PlayerFire : MonoBehaviour, IEffect
 {
         public void Drop(Vector3 position)
         {

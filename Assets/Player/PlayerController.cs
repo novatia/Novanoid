@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,9 @@ public class PlayerController : MonoBehaviour
     private bool m_LeftTrigger;
     private bool m_RightTrigger;
     public float Speed = 2;
+
+    private float m_CurrentSpeed = 2;
+
     public Vector3 StartPosition=Vector3.zero;
     public Vector3 LeftBound;
     public Vector3 RightBound;
@@ -15,10 +19,12 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         m_AudioSource = GetComponent<AudioSource>();
+        ResetComponent();
     }
 
     public void ResetComponent() {
         transform.position = StartPosition;
+        ResetSpeed();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,7 +33,7 @@ public class PlayerController : MonoBehaviour
         if (tag == "Ball")
         {
             m_AudioSource.Play();
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.up);
+            //collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector3.);
         }
 
         if (tag == "Effect")
@@ -42,6 +48,16 @@ public class PlayerController : MonoBehaviour
         {
             collision.gameObject.GetComponent<BrickBase>().StartCoroutine("DestroyBrick");
         }
+    }
+
+    public void ResetSpeed()
+    {
+        m_CurrentSpeed = Speed;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        m_CurrentSpeed = speed;
     }
 
     // Update is called once per frame
