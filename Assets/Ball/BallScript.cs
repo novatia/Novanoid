@@ -18,11 +18,21 @@ public class BallScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Border" || collision.gameObject.tag == "Ceil" || collision.gameObject.tag == "Player" || collision.gameObject.tag == "Brick")
+        if (collision.gameObject.tag == "Border" || collision.gameObject.tag == "Ceil" || collision.gameObject.tag == "Brick")
         {
-            float speed = m_RigidBody.velocity.magnitude;
-            Vector3 direction = Vector3.Reflect(m_RigidBody.velocity.normalized, collision.contacts[0].normal);
-            m_RigidBody.velocity = direction * speed;
+            //float speed = m_RigidBody.velocity.magnitude;
+            //Vector3 direction = Vector3.Reflect(m_RigidBody.velocity.normalized, collision.contacts[0].normal);
+            //m_RigidBody.velocity = direction * speed;
+        }
+
+        if (collision.gameObject.tag == "Player") 
+        {
+            float distance = ( transform.position - collision.gameObject.transform.position).magnitude;
+
+            Vector2 direction = Vector2.Reflect(m_RigidBody.velocity.normalized, collision.contacts[0].normal);
+            Vector2 force_direction = direction+Vector2.up * distance;
+
+            m_RigidBody.AddForce(force_direction);
         }
     }
 

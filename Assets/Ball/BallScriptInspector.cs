@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(BallScript))]
 public class BallScriptInspector : Editor
 {
@@ -11,3 +12,4 @@ public class BallScriptInspector : Editor
         Handles.DrawLine(bs.gameObject.transform.position, (bs.gameObject.transform.position + bs.Direction * bs.Speed));
     }
 }
+#endif

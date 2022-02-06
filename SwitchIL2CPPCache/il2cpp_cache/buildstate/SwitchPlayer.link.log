@@ -1,0 +1,34 @@
+Linker flags: -n"E:\RepositoryGIT\GITHUB_Novanoid\Temp\StagingArea\Application.aarch64.lp64.nmeta"
+Linking with:
+-nostartfiles
+-Wl,--gc-sections
+-Wl,-init=_init,-fini=_fini
+-Wl,-z,combreloc,-z,relro,--enable-new-dtags
+-Wl,-pie
+-Wl,--build-id=uuid
+-Wl,-u,malloc -Wl,-u,calloc -Wl,-u,realloc -Wl,-u,aligned_alloc -Wl,-u,free
+-v
+"-Wl,-T" "D:\Nintendo\mom\NintendoSDK\Resources\SpecFiles\Application.aarch64.lp64.ldscript"
+-fuse-ld=lld.exe
+-Wl,--dynamic-list=D:\Nintendo\mom\NintendoSDK\Resources\SpecFiles\ExportDynamicSymbol.lst
+-Wl,--start-group 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\rocrt.o" 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\nnApplication.o" 
+@"C:\Users\anovati\AppData\Local\Temp\tmp66C4.tmp"
+"C:\Program Files\Unity\Hub\Editor\2021.2.7f1\Editor\Data\PlaybackEngines\Switch\Native\release\baselib.a"
+"C:\Program Files\Unity\Hub\Editor\2021.2.7f1\Editor\Data\PlaybackEngines\Switch\Tools\../Native/Release/SwitchPlayer.a"
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\libnn_init_memory.a" 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\libnn_gfx.a" 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\libnn_mii_draw.a" 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\libnn_gfx.a" 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\libnn_mii_draw.a" 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\libcurl.a" 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\libz.a" 
+-Wl,--end-group 
+-Wl,--start-group 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\multimedia.nss" 
+"D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\nnSdk.nss" 
+-Wl,--end-group 
+D:\Nintendo\mom\NintendoSDK\Libraries\NX-NXFP2-a64\Release\crtend.o
+-o
+"E:\RepositoryGIT\GITHUB_Novanoid\Library\Il2cppBuildCache\Switch\Native\SwitchPlayer.nss"
