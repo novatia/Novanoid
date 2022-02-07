@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LifeLoss : MonoBehaviour
+public class GameMode : MonoBehaviour
 {
     public PlayerController m_PlayerController;
     private int m_BrickCount;
@@ -9,6 +9,9 @@ public class LifeLoss : MonoBehaviour
     private int m_CurrentLives;
 
     private int m_Points;
+
+    public GameObject BallPrefab;
+    public GameObject BallStart;
 
     private void Start()
     {
@@ -31,9 +34,6 @@ public class LifeLoss : MonoBehaviour
 
         if (tag == "Ball")
         {
-            other.transform.position = Vector3.zero;
-            other.gameObject.GetComponent<BallScript>().ResetComponent();
-            m_PlayerController.ResetComponent();
             m_CurrentLives--;
 
             if (m_CurrentLives <= 0)
@@ -41,17 +41,16 @@ public class LifeLoss : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 //GAME OVER
                 ResetGame();
-
             }
         }
-
-        if (tag == "Effect")
-            Destroy(other.gameObject);
     }
 
     void ResetGame() {
         m_CurrentLives = Lives;
         m_Points = 0;
+
+        GameObject ball = Instantiate(BallPrefab, BallStart.transform.position,Quaternion.identity);
+        
 
         GameObject[] Bricks = GameObject.FindGameObjectsWithTag("Brick");
 
@@ -62,5 +61,7 @@ public class LifeLoss : MonoBehaviour
             BrickBase brick = obj.GetComponent<BrickBase>();
             brick.BindEvent(BrickDestroyed);
         }
+
+
     }
 }

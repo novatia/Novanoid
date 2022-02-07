@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     private bool m_RightTrigger;
     public float Speed = 2;
 
+    public bool GoingLeft => m_LeftTrigger;
+    public bool GoingRight=> m_RightTrigger;
+
     private float m_CurrentSpeed = 2;
 
     public Vector3 StartPosition=Vector3.zero;
@@ -84,4 +87,14 @@ public class PlayerController : MonoBehaviour
                 transform.Translate(Speed * Vector3.right * Time.deltaTime);
 
     }
+
+
+#if UNITY_EDITOR
+
+
+    public void OnDrawGizmos()
+    {
+        GizmoUtility.DrawArrow(transform.position, transform.up,Color.blue, 1, 0);
+    }
+#endif
 }
